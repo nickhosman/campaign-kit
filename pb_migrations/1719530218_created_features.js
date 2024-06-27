@@ -1,19 +1,19 @@
 /// <reference path="../pb_data/types.d.ts" />
 migrate((db) => {
   const collection = new Collection({
-    "id": "9f7gse9u5uphnrx",
-    "created": "2024-06-19 19:44:35.716Z",
-    "updated": "2024-06-19 19:44:35.716Z",
-    "name": "feaures",
+    "id": "u9lyrlkckbbkqn3",
+    "created": "2024-06-27 23:16:58.339Z",
+    "updated": "2024-06-27 23:16:58.339Z",
+    "name": "features",
     "type": "base",
     "system": false,
     "schema": [
       {
         "system": false,
-        "id": "psjq6khf",
+        "id": "jkd5oa6z",
         "name": "name",
         "type": "text",
-        "required": true,
+        "required": false,
         "presentable": false,
         "unique": false,
         "options": {
@@ -24,10 +24,10 @@ migrate((db) => {
       },
       {
         "system": false,
-        "id": "hpwcbzwh",
+        "id": "sxodmyky",
         "name": "description",
         "type": "text",
-        "required": true,
+        "required": false,
         "presentable": false,
         "unique": false,
         "options": {
@@ -38,16 +38,30 @@ migrate((db) => {
       },
       {
         "system": false,
-        "id": "xcpijs78",
+        "id": "qeedyzn1",
         "name": "level",
         "type": "number",
         "required": false,
         "presentable": false,
         "unique": false,
         "options": {
-          "min": 1,
+          "min": 0,
           "max": 20,
           "noDecimal": true
+        }
+      },
+      {
+        "system": false,
+        "id": "j10zqo94",
+        "name": "source",
+        "type": "text",
+        "required": false,
+        "presentable": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
         }
       }
     ],
@@ -63,7 +77,7 @@ migrate((db) => {
   return Dao(db).saveCollection(collection);
 }, (db) => {
   const dao = new Dao(db);
-  const collection = dao.findCollectionByNameOrId("9f7gse9u5uphnrx");
+  const collection = dao.findCollectionByNameOrId("u9lyrlkckbbkqn3");
 
   return dao.deleteCollection(collection);
 })
