@@ -12,6 +12,20 @@ type Proficiency = {
     name: string;
 };
 
+enum statistic {
+    STR,
+    DEX,
+    CON,
+    INT,
+    WIS,
+    CHA,
+};
+
+type Bonus = {
+    stat: statistic;
+    value: number;
+};
+
 type Feature = {
     name: string;
     description: string;
